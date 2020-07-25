@@ -5,45 +5,35 @@ import csv
 # pybank_csv = os.path.join('..', 'Resources', 'budget_data.csv')
 # V.S code csv filepath
 pybank_csv = os.path.join('.', 'Desktop', 'repos', 'Python-Challenge', 'PyBank', 'Resources', 'budget_data.csv')
-print(pybank_csv)
-def Average(row): 
-    return sum(row) / len(row) 
-def average_change(row):
-    new_lst = []
-    for number in range(len(row)):
-        if number < 0:
-            new_lst.append(number)      
-    return sum(new_lst)/len(new_lst)
-def min(row):
-    min = 0
-    for number in range(len(row)):
-        if number <= min:
-            min = number
-    return min
-def max(row):
-    max = 0
-    for number in range(len(row)):
-        if number >= max:
-            max = number
-    return max
-
-# with open(pybank_csv) as csvfile:
-#     fast_reader = csv.reader(csvfile, delimiter = ",") 
-#     next(fast_reader, None)
+def average(list1): 
+    return round((sum(list1) / len(list1)), 2)
+with open(pybank_csv) as csvfile:
+    fast_reader = csv.reader(csvfile, delimiter = ",") 
+    total_month = 0
+    new_list = []
+    positive_numbers = []
+    negative_numbers = []
+    csv_header = next(fast_reader)
+    # print(lines)
     # print(csv_header)
-
+    # print(lines)
+    # print(type(lines))
     for row in fast_reader:
-        # average = Average(row)
-        total_months = len(str(row[0]))
-    print("Total Months: ", total_months)
-    print(f"{max(row[1])} {row[0]}")
-    print(f"{min(row[1])} {row[0]}")
-    print(average_change(row[1]))
-    # print(average(row[1]))
-with open(pybank_csv, 'r') as file_handler:
-    lines = file_handler.read()
-    csv_header = next(file_handler)
-    print(csv_header)
-    print(lines)
-    print(type(lines))
+        total_month += 1
+        new_list.append(int(row[1]))
+        if int(row[1]) >= 0:
+            positive_numbers.append(int(row[1]))
+        elif int(row[1]) < 0:   
+            negative_numbers.append(int(row[1]))
+    # print(f"Total Months: {len(new_list)}")       
+    # print(f"Total: ${sum((new_list))}")
+    # print(f"Average Change:  ${average((negative_numbers))}")
+        if row[1] == max(positive_numbers):
+            print(f"Greatest Increase in Profits:  {row[0]}  (${max(positive_numbers)})")
+        if row[1] == min(negative_numbers):
+            print(f"Greatest Decrease in Profits:  {row[0]}  (${min(negative_numbers)})")
+ 
+    # print(negative_numbers)
+    
+
    
