@@ -1,10 +1,10 @@
 # PyBank Data Code:
-# csv filePath = C:\Users\tahir\Desktop\repos\Python-Challenge\PyBank\Resources\budget_data.csv
 import os
 import csv
 # pybank_csv = os.path.join('..', 'Resources', 'budget_data.csv')
 # V.S code csv filepath
 pybank_csv = os.path.join('.', 'Desktop', 'repos', 'Python-Challenge', 'PyBank', 'Resources', 'budget_data.csv')
+
 def average(list1): 
     return round((sum(list1) / len(list1)), 2)
 with open(pybank_csv) as csvfile:
@@ -16,13 +16,10 @@ with open(pybank_csv) as csvfile:
     new_list = []
     positive_numbers = []
     negative_numbers = []
-    # print(lines)
-    # print(csv_header)
-    # print(lines)
-    # print(type(lines))
     for row in bank_reader:
-        total_month += 1
+        # total_month += 1
         new_list.append(int(row[1]))
+        print(row[0], row[1])
         if int(row[1]) >= 0:
             positive_numbers.append(int(row[1]))
             month_inc_list.append(str(row[0]))
@@ -43,8 +40,9 @@ with open(pybank_csv) as csvfile:
     print(f"Average Change:  ${average((negative_numbers))}")
     print(f"Greatest Increase in Profits:  {month_inc} (${greatest_increase})")
     print(f"Greatest Decrease in Profits:  {month_dec} (${greatest_decrease})")
- 
-    # print(negative_numbers)
+    # print(new_list)
+   
+
     
 
    
