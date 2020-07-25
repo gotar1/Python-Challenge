@@ -10,6 +10,7 @@ def average(list1):
 with open(pybank_csv) as csvfile:
     fast_reader = csv.reader(csvfile, delimiter = ",") 
     total_month = 0
+    nimir = []
     new_list = []
     positive_numbers = []
     negative_numbers = []
@@ -23,15 +24,16 @@ with open(pybank_csv) as csvfile:
         new_list.append(int(row[1]))
         if int(row[1]) >= 0:
             positive_numbers.append(int(row[1]))
+            greatest_increase = max(positive_numbers)
+            juan = (row[0])
         elif int(row[1]) < 0:   
             negative_numbers.append(int(row[1]))
-    # print(f"Total Months: {len(new_list)}")       
-    # print(f"Total: ${sum((new_list))}")
-    # print(f"Average Change:  ${average((negative_numbers))}")
-        if row[1] == max(positive_numbers):
-            print(f"Greatest Increase in Profits:  {row[0]}  (${max(positive_numbers)})")
-        if row[1] == min(negative_numbers):
-            print(f"Greatest Decrease in Profits:  {row[0]}  (${min(negative_numbers)})")
+            greatest_decrease = min(negative_numbers)
+    print(f"Total Months: {len(new_list)}")       
+    print(f"Total: ${sum((new_list))}")
+    print(f"Average Change:  ${average((negative_numbers))}")
+    print(f"Greatest Increase in Profits:  {row[0]} (${greatest_increase})")
+    print(f"Greatest Decrease in Profits:  {row[0]} (${greatest_decrease})")
  
     # print(negative_numbers)
     
