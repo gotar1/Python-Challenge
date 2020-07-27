@@ -17,7 +17,6 @@ with open(pybank_csv) as csvfile:
     positive_numbers = []
     negative_numbers = []
     for row in bank_reader:
-        # total_month += 1
         new_list.append(int(row[1]))
         total_months = len(new_list)
         if int(row[1]) >= 0:
@@ -36,12 +35,13 @@ with open(pybank_csv) as csvfile:
     for row in bank_reader:
         if row[1] == greatest_increase:
             month_inc_list.append(str(row[0]))
-    print(f"Total Months: {total_months}")       
-    print(f"Total: ${sum((new_list))}")
-    print(f"Average Change:  ${average_change}")
-    print(f"Greatest Increase in Profits:  {month_inc} (${greatest_increase})")
-    print(f"Greatest Decrease in Profits:  {month_dec} (${greatest_decrease})")
-    # print(new_list)
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months: {total_months}")       
+print(f"Total: ${sum((new_list))}")
+print(f"Average Change:  ${average_change}")
+print(f"Greatest Increase in Profits:  {month_inc} (${greatest_increase})")
+print(f"Greatest Decrease in Profits:  {month_dec} (${greatest_decrease})")
    
 
     
