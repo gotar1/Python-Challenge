@@ -4,12 +4,11 @@ import csv
 from datetime import datetime
 
 # P.C csv filepath:
-pyboss_csv = os.path.join('.', 'employee_data.csv')
-
+# pyboss_csv = os.path.join('.', 'employee_data.csv')
 # V.S code csv filepath:
 # pyboss_csv = os.path.join('.', 'Desktop', 'repos', 'Python-Challenge', 'PyBoss', 'employee_data.csv')
 # output csv filepath:
-output_path = os.path.join('.', 'output', 'new_employee_data.csv')
+# output_path = os.path.join('.', 'output', 'new_employee_data.csv')
 
 us_state_abbrev = {
     'Alabama': 'AL',
