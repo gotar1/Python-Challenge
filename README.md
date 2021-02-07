@@ -23,7 +23,7 @@
 
 #### <a id="financial-analysis"></a> Financial Analysis
 
-![Index page](PyBank/analysis/pybank_results.txt)
+![Financial Analysis](/PyBank/analysis/pybank_results.txt)
   
   
 ## PyPoll
@@ -47,13 +47,13 @@
 
 ### Screenshots
 
-#### <a id="Voting-analysis"></a> Voting Analysis
+#### <a id="voting-analysis"></a> Voting Analysis
 
-![Index page](PyPoll/analysis/pypoll_results.txt)
+![Voting Analysis](/PyPoll/analysis/pypoll_results.txt)
 
 ## PyBoss
 
-![Boss](Images/boss.jpg)
+![Boss](/PyBoss/Images/boss.jpg)
 
 * In this challenge, we get to be a boss that oversee hundreds of employees across the country. 
 * Our company recently decided to purchase a new HR system, unfortunately, the new system requires 
